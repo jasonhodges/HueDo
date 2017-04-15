@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { LightsService } from './services/lights.service';
+
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app works!';
+  
+
+  title = 'HueDo';
+
+  constructor(private lightsService: LightsService) {
+    
+  }
+
+  
+
+  // getLights() {
+  //   this.lightsService.getLights();
+  // }
+
+  toggleOn(id: number) {
+    this.lightsService.toggleOn(id).subscribe();
+  }
+
+  toggleOff(id: number) {
+    this.lightsService.toggleOff(id).subscribe();
+  }
 }

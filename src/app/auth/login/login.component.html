@@ -1,0 +1,12 @@
+<p>
+    login works!
+</p>
+<form>
+    <md-input-container>
+        <input [formControl]="email" mdInput placeholder="email" type="email">
+    </md-input-container>
+    <md-input-container>
+        <input [formControl]="password" mdInput placeholder="password" type="password">
+    </md-input-container>
+    <button md-raised-button (click)="login()">Login</button>
+</form>
