@@ -10,15 +10,10 @@ import { LightsService } from './services/lights.service';
 })
 export class AppComponent {
   
-
   title = 'HueDo';
 
-  constructor(private lightsService: LightsService) {
-    
-  }
-
+  constructor(private lightsService: LightsService) { }
   
-
   // getLights() {
   //   this.lightsService.getLights();
   // }

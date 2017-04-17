@@ -1,15 +1,35 @@
+import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
+  email = new FormControl();
+  password = new FormControl();
 
-  constructor() { }
+  signupForm: FormGroup;
+  
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService) {
+      this.createForm();
+     }
 
-  ngOnInit() {
+  createForm() {
+    this.signupForm = this.fb.group({
+      email: '',
+      password: ''
+    });
   }
 
+  signup() {
+    debugger
+    this.authService.signUpWithEmail(
+      this.signupForm.value
+    );
+  }
 }

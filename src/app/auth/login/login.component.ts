@@ -20,13 +20,15 @@ export class LoginComponent implements OnInit {
 
   login() {
     debugger
-    this.af.auth.login({
+    this.af.auth.login(
+      {
         email: this.email.value,
         password: this.password.value
       },
       {
         provider: AuthProviders.Password,
         method: AuthMethods.Password
-      });
+      }
+    );
   }
 }

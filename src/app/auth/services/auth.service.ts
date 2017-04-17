@@ -22,12 +22,13 @@ export class AuthService {
   }
 
   signUpWithEmail(formData) {
-    if(formData.valid) {
+    // if(formData.valid) {
+      debugger
       this.af.auth.createUser(formData).catch(function(error) {
         var errorCode = error.name;
         var errorMessage = error.message
       })
-    }
+    // }
   }
 
   signInWithEmail(formData) {

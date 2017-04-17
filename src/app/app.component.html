@@ -1,9 +1,9 @@
 <h1>
     {{title}}
 </h1>
-<!--<div>{{ (af.auth | async)?.uid }}</div>-->
-
 <!--<button (click)="getLights()">get Lights</button>-->
 <button md-raised-button (click)="toggleOn(1)">Light 1 ON</button>
 <button md-raised-button (click)="toggleOff(1)">Light 1 OFF</button>
-<router-outlet></router-outlet>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
